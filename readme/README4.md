@@ -1,4 +1,4 @@
-### Remember Me 인증 API
+### RememberMe 인증 API
 
 ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/3ed95f57-1f97-4053-9eae-9f6f6cbe3bc4/image.png)
 
@@ -21,7 +21,19 @@ RememberMeAuthenticationFilter가 사용자의 요청을 받아서 요청을 처
 - 만약 Authentication 객체가 null이 아니면 해당 rememberMe 필터는 동작하지 않는다
 - 즉 RememberMeAuthenticationFilter는 인증을 받은 사용자가 세션타임 아웃의 경우에 해당하여 세션이 만료되었거나 해당 브라우저가 종료되어 세션이 끊기게 되어 세션이 더 이상 활성화 되지 않아 인증 객체를 찾지 못하는 경우에 자동적으로 사용자의 인증을 유지하기 위해 이 필터가 인증을 시도한다
 
-### Remember Me 인증 흐름
+### RememberMe 인증 필터
+RememberMeAuthenticationFilter가 사용자의 요청을 받아서 요청을 처리하는 조건은 아래의 두 가지 조건을 충족하면 정상적으로 동작한다.
+
+1. Authentication 인증 객체가 null일 경우
+2. Form 인증 받을 당시 rememberMe 기능 활성화해서 서버로부터 rememberMe 쿠키를 발급 받은 경우
+- 인증 객체는 SecurityContext에 저장 되어 있음
+- 인증을 받은 사용자는 SecurityContext에 항상 인증 객체가 존재
+- SecurityContext에 Authentication이 존재하지 않는 경우는 사용자 세션이 만료 되어 세션 안에서 더 이상 SecurityContext를 찾지 못하고, 그 SecurityContext가 존재하지 않기 때문에 인증 객체도 없는 경우
+- 이 경우에 RememberMeAuthenticationFilter가 동작함
+- 만약 Authentication 객체가 null이 아니면 해당 rememberMe 필터는 동작하지 않는다
+- 즉 RememberMeAuthenticationFilter는 인증을 받은 사용자가 세션타임 아웃의 경우에 해당하여 세션이 만료되었거나 해당 브라우저가 종료되어 세션이 끊기게 되어 세션이 더 이상 활성화 되지 않아 인증 객체를 찾지 못하는 경우에 자동적으로 사용자의 인증을 유지하기 위해 이 필터가 인증을 시도한다
+
+### RememberMe 인증 흐름
 
 ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/a469da11-6b5d-41ae-a15d-3794488c5e5e/Untitled.png)
 
