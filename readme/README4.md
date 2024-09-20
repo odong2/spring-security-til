@@ -1,5 +1,3 @@
-![image (3)](https://github.com/user-attachments/assets/36bb1539-4329-48f0-a9d2-10299581b275)
-
 ### RememberMe 인증 API
 ![image (4)](https://github.com/user-attachments/assets/ef7956f1-0524-4567-8832-e0b8683d2118)
 
