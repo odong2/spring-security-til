@@ -2,7 +2,7 @@
 
 - 인증을 받지 않은 사용자를 null 판단해서 처리하는 것이 아닌 별도의 익명 사용자용 인증 객체를 만들어서 사용
 
-<img width="824" alt="Untitled" src="https://github.com/user-attachments/assets/5e0c537d-b0e6-4eb8-b446-fbe01b8e045b">
+<img width="809" alt="Untitled (1)" src="https://github.com/user-attachments/assets/56a66c67-6b30-4868-b461-09e5a78772ef">
 
 1. 사용자 요청
 2. AnoymousAuthenticationFilter가 요청 받음
