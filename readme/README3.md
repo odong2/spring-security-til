@@ -1,12 +1,10 @@
 ### Logout API
+![image](https://github.com/user-attachments/assets/3b3912ee-4dfd-4bbf-ad18-63605a9f5f0c)
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/47cb426c-6003-4cb2-8f2d-d92e840bbb78/image.png)
 
 ### Logout Filter
-
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/46228e6f-d6d5-4843-8461-e772a464200a/image.png)
-
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/f7949927-e54c-4f30-a8df-902016456c08/image.png)
+![image (1)](https://github.com/user-attachments/assets/df61af7d-2b4e-4416-819f-f901644536e9)
+![image (2)](https://github.com/user-attachments/assets/9e210a92-c46f-4a07-9522-afb5672b0c67)
 
 **로그아웃 필터 실행 흐름**
 
