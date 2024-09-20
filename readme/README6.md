@@ -1,8 +1,7 @@
 ## 세션 관리
 
 ### 동시 세션 제어
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/bca92dde-dba6-46cb-8787-e036698d17a5/Untitled.png)
+<img width="782" alt="Untitled (2)" src="https://github.com/user-attachments/assets/1b6cbc87-230c-4543-8bdc-14a46aec4d8c">
 
 **상황**
 
@@ -25,8 +24,7 @@
 - 동일한 계정으로 첫 번째 사용자만 서버에 존재
 
 ### 세션 제어 API
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/62b30bc4-1786-4f37-811c-5bbfa3464f7d/Untitled.png)
+<img width="725" alt="Untitled (3)" src="https://github.com/user-attachments/assets/eb02b922-5002-4e27-972e-432683bb8958">
 
 - sessionManagement 통해 세션 제어
 - 동시 세션 제어 뿐 아니라 여러 기능을 제공
@@ -37,8 +35,7 @@
 - ivaliadUrl 과 expiredUrl 두 가지 모두 설정하였을 경우 invalidUrl이 우선 시 되어 이동하게 됨
 
 ### 세션 고정 보호
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/c3057c01-cfc1-4ffa-a4fd-b8417cfdab02/Untitled.png)
+<img width="620" alt="Untitled (4)" src="https://github.com/user-attachments/assets/00e7f3c6-6204-4c8b-a000-f057769fd2bd">
 
 1. 공격자가 서버에 접속
 2. 서버는 공격자에게 JSESSIONID 쿠키 발급
@@ -59,10 +56,10 @@
 - 기본적으로 설정이 되어 있어 따로 설정해 주지 않아도 됨
 - 보안에서 아주 중요한 기능
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/78056421-bd4c-4174-a7c4-6d973feb7847/Untitled.png)
+<img width="755" alt="Untitled (5)" src="https://github.com/user-attachments/assets/6887a4d0-502f-4a83-ad99-daada20a580b">
 
 ### 세션 정책
 
 - 세션을 전혀 사용하지 않는 jwt 인증 방식을 사용할 때 stateless 정책 사용
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/2e75825f-2ffc-4896-b57c-596c8088bd30/Untitled.png)
+<img width="716" alt="Untitled (6)" src="https://github.com/user-attachments/assets/e1c96f1b-fa0d-4262-bf47-e6f271e06290">
