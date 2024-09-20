@@ -1,6 +1,5 @@
 ### RememberMe 인증 API
-
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/3ed95f57-1f97-4053-9eae-9f6f6cbe3bc4/image.png)
+![image (3)](https://github.com/user-attachments/assets/36bb1539-4329-48f0-a9d2-10299581b275)
 
 - rememberMe 기본 파라미터명은 remember-me
 - tokenValiditySeconds 기본 14일
@@ -34,8 +33,7 @@ RememberMeAuthenticationFilter가 사용자의 요청을 받아서 요청을 처
 - 즉 RememberMeAuthenticationFilter는 인증을 받은 사용자가 세션타임 아웃의 경우에 해당하여 세션이 만료되었거나 해당 브라우저가 종료되어 세션이 끊기게 되어 세션이 더 이상 활성화 되지 않아 인증 객체를 찾지 못하는 경우에 자동적으로 사용자의 인증을 유지하기 위해 이 필터가 인증을 시도한다
 
 ### RememberMe 인증 흐름
-
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/a469da11-6b5d-41ae-a15d-3794488c5e5e/Untitled.png)
+![image (4)](https://github.com/user-attachments/assets/ef7956f1-0524-4567-8832-e0b8683d2118)
 
 1. 사용자가 세션이 만료되었음
 2. 사용자 from 인증 당시 remember-me 활성화하여 인증 → remember-me 쿠키를 굽게 됨
