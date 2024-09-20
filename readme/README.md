@@ -2,6 +2,8 @@
 실질적으로 사용자가 로그인하게 되면 인증 처리가 이루어 지는데, 그 인증 처리를 담당하고 인증 처리와 관련된 요청을 처리하는 필터가 **UsernamePasswordAuthenticationFilter**
 이 필터가 각각의 인증처리 역할에 따라서 인증처리를 하게 됨
 
+![image](https://github.com/user-attachments/assets/1b92ba68-c585-4738-97a6-014a2a265b96)
+
 1. 사용자 인증 시도
 2. UsernamePasswordAuthenticationFilter 요청 받음
 3. 해당 필터가 요청 정보를 먼저 확인
