@@ -42,7 +42,7 @@ protected void configure(HttpSecurity http) throws Exception{
 
 <aside>
 	
-**주의사항 - 설정 시 구체적인 경로가 먼저 오고 그것 보다 큰 범위의 경로가 뒤에 오도록 설정해야한다**
+💡 **주의사항 - 설정 시 구체적인 경로가 먼저 오고 그것 보다 큰 범위의 경로가 뒤에 오도록 설정해야한다**
 
 </aside>
 
