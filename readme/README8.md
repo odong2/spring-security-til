@@ -1,4 +1,4 @@
-### ExceptionTranslationFilter & RequestCacheAwareFilter
+### ExceptionTranslationFilter
 
 - **ExceptionTranslationFilter**
   - 해당 필터는 아래의 두 예외를 처리
