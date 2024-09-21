@@ -25,10 +25,10 @@
 - 이후 클라이언트가 서버에 접속하기 위해서는 서버가 발급한 토큰을 반드시 가져와야 한다
 - 요청 시 전달되는 토큰 값과 서버에 저장된 실제 값과 비교한 후 만약 일치하지 않으면 요청 실패
 - 클라이언트
-    - <input type=”hidden” name=”${_csrf.parameterName}” value=”${_csrf.token}”/>
-    - HTTP 메소드 : PATCH, POST, PUT, DELETE 와 같은 메소드로 요청할 때는 반드시 서버에서 발급한 csrf 토큰 값 가지고 요청해야 한다
-    - 위와 같이 파라미터 또는 헤더에 토큰을 실어 보내어 인증 가능
+  - <input type=”hidden” name=”${_csrf.parameterName}” value=”${_csrf.token}”/>
+  - HTTP 메소드 : PATCH, POST, PUT, DELETE 와 같은 메소드로 요청할 때는 반드시 서버에서 발급한 csrf 토큰 값 가지고 요청해야 한다
+  - 위와 같이 파라미터 또는 헤더에 토큰을 실어 보내어 인증 가능
 - Spring Security
-    - `http.csrf()` : 기본 활성화되어 있음
-    - `http.csrf().disabled()` : 비활성화
+  - `http.csrf()` : 기본 활성화되어 있음
+  - `http.csrf().disabled()` : 비활성화
 - csrf 기능은 별도의 설정이 없어도 시큐리티가 기본적으로 설정하고 있어 사용가능
