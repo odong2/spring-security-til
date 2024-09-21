@@ -47,7 +47,7 @@
 
 ### ExceptionTranslationFilter 흐름
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/9a2bc1c2-4261-4866-9baa-f785c963df0a/Untitled.png)
+<img width="814" alt="ExceptionTranslationFilter" src="https://github.com/user-attachments/assets/321df093-3b92-4c75-9f28-60de763e797a">
 
 **인증 예외 프로세스**
 
@@ -80,7 +80,7 @@
 
 ### 예외 처리 API
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/2e63314f-04ae-4cc1-bb72-dfad1a876878/Untitled.png)
+<img width="766" alt="ExceptionHandling" src="https://github.com/user-attachments/assets/d5cbaec4-59d8-4f56-8185-3d094031fd32">
 
 - 인증 예외 처리
   - `AuthenticationEntryPoint`인터페이스를 구현하여 설정
