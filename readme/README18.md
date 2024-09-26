@@ -1,6 +1,6 @@
 ### AuthenticationProvider
 
-![image11](https://github.com/user-attachments/assets/a968cd9d-82f4-473b-a5a7-36847b86a9a4)
+<img width="600" src="https://github.com/user-attachments/assets/a968cd9d-82f4-473b-a5a7-36847b86a9a4">
 
 - AuthenticationProvider 인터페이스
 - 두 개의 메서드 제공
