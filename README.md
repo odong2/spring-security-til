@@ -1,5 +1,5 @@
 ## spring-security
-spring-security 5.2.1 버전 학습 소스
+spring-security 5.2.1 버전 학습
 
 ## 환경
 - Spring-boot 2.2.1.RELEASE
