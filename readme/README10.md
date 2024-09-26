@@ -10,7 +10,10 @@
 
 ### FilterChainProxy
 
-![FilterChainProxy](https://github.com/user-attachments/assets/0cdef3e8-3582-4c82-85de-4abdbe45853f)
+<p>
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/0cdef3e8-3582-4c82-85de-4abdbe45853f">
+</p>
+
 
 <aside>
 💡
