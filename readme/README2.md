@@ -1,6 +1,6 @@
 ### 인증처리 프로세스 간략 정리
 
-![image16](https://github.com/user-attachments/assets/7807a8ee-ed9d-480d-b8d2-cdb9733adac4)
+<img width="500" alt="image17" src="https://github.com/user-attachments/assets/7807a8ee-ed9d-480d-b8d2-cdb9733adac4">
 
 1. 사용자가 get 방식으로 home url 요청
 2. home url은 인증된 사용자만 접근할 수 있도록 보안 설정이 설정된 상태
