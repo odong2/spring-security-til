@@ -1,6 +1,6 @@
 ### 인증처리 프로세스 간략 정리
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/f2fc4912-fac9-438c-9f6e-812b1869e3b7/image.png)
+![image16](https://github.com/user-attachments/assets/7807a8ee-ed9d-480d-b8d2-cdb9733adac4)
 
 1. 사용자가 get 방식으로 home url 요청
 2. home url은 인증된 사용자만 접근할 수 있도록 보안 설정이 설정된 상태
@@ -12,7 +12,7 @@
 
 ### formLogin 인증 API 기능 정리
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/142c9efa-abae-4400-8d69-807e39e89118/Untitled.png)
+<img width="636" alt="image17" src="https://github.com/user-attachments/assets/facf5882-cb5a-48a7-a9c0-6a719e148e3b">
 
 - **loginPage :** 사용자 정의 로그인 페이지 사용
 - **defaultSucessUrl :** 이동할 페이지 경로
