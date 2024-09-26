@@ -1,6 +1,6 @@
 ### Authentication Flow
 
-![image8](https://github.com/user-attachments/assets/9ebddb9b-3539-444f-8b7a-6422235cfa25)
+<img width="600" src="https://github.com/user-attachments/assets/9ebddb9b-3539-444f-8b7a-6422235cfa25">
 
 1. **사용자 로그인 요청**
 2. **UsernamePasswordAuthenticationFilter 요청 받음**
