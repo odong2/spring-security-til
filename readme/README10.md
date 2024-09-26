@@ -1,6 +1,6 @@
 ### DelegatingFilterProxy
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/c6e881b8-8a7f-4ecc-b3ec-0651f034b42c/image.png)
+![DelegatingFilerProxy](https://github.com/user-attachments/assets/a11e73ec-588b-4037-877d-cde0f0971cb6)
 
 - `DelegatingFilterProxy`는 **서블릿 필터이다**
 - Spring에서 관리하는 필터가 아니다
@@ -10,7 +10,7 @@
 
 ### FilterChainProxy
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/6ccd473b-a6f4-40c1-be38-0687613b6d78/image.png)
+![FilterChainProxy](https://github.com/user-attachments/assets/0cdef3e8-3582-4c82-85de-4abdbe45853f)
 
 <aside>
 💡
@@ -35,7 +35,7 @@ FilterChainProxy는 실제로 보안처리를 하게 되는 시작점
 
 ### 전체적 흐름
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/7f4b85e8-8c8a-43b8-9ab3-edbc862ed722/image.png)
+![image](https://github.com/user-attachments/assets/35bb64ee-4b75-4d2d-8d46-52c01b9000ac)
 
 1. 사용자 요청하면 서블릿 컨테이너에서 가장 먼저 요청을 받게 됨
 2. 요청에 대해서 각각의 서블릿 필터들이 요청을 처리
@@ -44,6 +44,6 @@ FilterChainProxy는 실제로 보안처리를 하게 되는 시작점
 4. FilterChainProxy는 자신이 관리하는 모든 필터들을 호출하여 보안 처리 수행
 5. 모든 필터들이 수행되면 DispatcherServlet에 요청을 전달하여 해당 서블릿에서 요청에 대한 처리를 수행
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/092abba6-ca5a-4cdb-9ecd-1349d3639529/image.png)
+![image2](https://github.com/user-attachments/assets/f5d2049b-24d1-492f-8120-aa2d290275f3)
 
 SecurityFilterAutoConfiguration에서 DelegatingFilterProxy 등록 시 springSecurityFilterChain 이름으로 등록하는 것을 확인할 수 있다
