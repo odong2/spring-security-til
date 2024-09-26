@@ -1,6 +1,6 @@
 ### 필터 초기화와 다중 설정 클래스
 
-![image3](https://github.com/user-attachments/assets/2184fbc9-8750-4596-adc9-ad849fea5d2a)
+<img width="600" src="https://github.com/user-attachments/assets/2184fbc9-8750-4596-adc9-ad849fea5d2a">
 
 - WebSecurityConfigurerAdapter 상속 받아 httpSecurity 통해 인증 및 인가 API 설정 (SequrityConfig 클래스)
 - 위 이미지는 기존 SecurityConfig를 하나만 설정하는 것이 아닌 두 개를 생성하여 다중으로 설정하는 방법의 예시
