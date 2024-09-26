@@ -18,7 +18,7 @@
     - `details`: 인증 부가 정보
     - `Authenticated` : 인증 여부
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/6ea9dd64-611f-4491-a7cd-8351cfb90119/image.png)
+![image5](https://github.com/user-attachments/assets/659e170e-402c-4688-9e8d-ff344f3fe537)
 
 1. 사용자 로그인 (username + password)
 2. UsernamePasswordAuthenticationFilter 인증 필터 Authentication 객체 생성
