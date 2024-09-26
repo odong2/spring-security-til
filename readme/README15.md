@@ -1,6 +1,6 @@
 ### Authentication Flow
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/4a734a71-2416-48b5-9cf5-22e67bcfd8ee/image.png)
+![image8](https://github.com/user-attachments/assets/9ebddb9b-3539-444f-8b7a-6422235cfa25)
 
 1. **사용자 로그인 요청**
 2. **UsernamePasswordAuthenticationFilter 요청 받음**
