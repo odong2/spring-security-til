@@ -20,7 +20,7 @@
         3. 요청 처리가 끝난 후, 사용하지 않는 인증 정보를 지워 리소스를 해제하여 자원 관리
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/700e6b8d-b791-4fe1-aeb9-42f4b8f902d4/image.png)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-![image7](https://github.com/user-attachments/assets/05d7aac3-d043-460a-b8c7-8996efb33b63)
 
 1. 사용자 요청
 2. SecurityContextPersistenceFilter 매 요청 시 요청을 받음
