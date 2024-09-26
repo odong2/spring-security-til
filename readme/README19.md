@@ -3,7 +3,7 @@
 > **당신에게 무엇이 허가 되었는지 증명하는 것**
 >
 
-![image12](https://github.com/user-attachments/assets/acca8364-c674-464c-808a-951bd0e88851)
+<img width="600" src="https://github.com/user-attachments/assets/acca8364-c674-464c-808a-951bd0e88851">
 
 - 인가 처리란 인증을 받은 사용자가 어떤 특정한 자원에 접근하고자 할 때 그 자원에 접근할 자격이 되는지 처리를 하는 것
 - 요청이 오면 인증을 여부 판단
@@ -36,7 +36,7 @@
 
 ### FilterSecurityInterceptor Flow
 
-![image14](https://github.com/user-attachments/assets/7f7a6d6f-e8eb-4ae8-b488-1e819e5f3fa4)
+<img width="600" src="https://github.com/user-attachments/assets/7f7a6d6f-e8eb-4ae8-b488-1e819e5f3fa4">
 
 1. 사용자 요청
 2. `FilterSecurityInterceptor`가 인증 객체 존재 여부 판단
