@@ -1,6 +1,6 @@
 ### AuthenticationManager
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/cd1d4ed8-4e70-416d-8d14-fced8543193d/image.png)
+![image9](https://github.com/user-attachments/assets/af610c75-d1f6-408a-9c98-c8d0c08a3bce)
 
 - 인증 처리 필터로 부터 인증 처리를 지시 받는 첫 클래스
 - AuthenticationMnager 인터페이스이고, 구현한 구현체가 `ProviderManager`
@@ -23,4 +23,4 @@
 - 각 AuthenticationProvider 객체는 스프링 시큐리티 초기화시 AuthenticationMnagerBuilder 클래스에 의해서 생성됨
 - 기본으로 AnonymousAuthenticationProvider는 생성됨
 
-  ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/64874e44-07d8-4635-8559-f3400b9c69c3/image.png)
+![image10](https://github.com/user-attachments/assets/5c83ff74-5065-4037-a245-e5f7105dd80a)
