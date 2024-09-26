@@ -18,7 +18,7 @@
     - `details`: 인증 부가 정보
     - `Authenticated` : 인증 여부
 
-![image5](https://github.com/user-attachments/assets/659e170e-402c-4688-9e8d-ff344f3fe537)
+<img width="600" src="https://github.com/user-attachments/assets/659e170e-402c-4688-9e8d-ff344f3fe537">
 
 1. 사용자 로그인 (username + password)
 2. UsernamePasswordAuthenticationFilter 인증 필터 Authentication 객체 생성
