@@ -21,7 +21,7 @@
 - `Authentication authentication = SecurityContextHolder.getContext().getAuthentication()`
     - 해당 구문을 통해 전역에서 Authentication 객체 참조 가능
 
-![image6](https://github.com/user-attachments/assets/882cd249-e6c5-4f75-b364-c7706472c3c9)
+<img width="600" src="https://github.com/user-attachments/assets/882cd249-e6c5-4f75-b364-c7706472c3c9">
 
 1. **사용자 로그인**
 2. **서버에서 스레드 하나 생성**
