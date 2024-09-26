@@ -19,8 +19,7 @@
         2. 다음 요청에서 새로운 인증 정보를 안전하게 설정할 수 있음. 즉, 이전 요청의 정보가 다음 요청에 영향을 미치지 않도록 보장
         3. 요청 처리가 끝난 후, 사용하지 않는 인증 정보를 지워 리소스를 해제하여 자원 관리
 
-
-![image7](https://github.com/user-attachments/assets/05d7aac3-d043-460a-b8c7-8996efb33b63)
+<img width="600" src="https://github.com/user-attachments/assets/05d7aac3-d043-460a-b8c7-8996efb33b63">
 
 1. 사용자 요청
 2. SecurityContextPersistenceFilter 매 요청 시 요청을 받음
