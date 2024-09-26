@@ -3,7 +3,7 @@
 > **당신에게 무엇이 허가 되었는지 증명하는 것**
 >
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/4397fa56-d631-4972-a64f-713fb12cd468/image.png)
+![image12](https://github.com/user-attachments/assets/acca8364-c674-464c-808a-951bd0e88851)
 
 - 인가 처리란 인증을 받은 사용자가 어떤 특정한 자원에 접근하고자 할 때 그 자원에 접근할 자격이 되는지 처리를 하는 것
 - 요청이 오면 인증을 여부 판단
@@ -11,7 +11,7 @@
 
 ### 스프링 시큐리티가 지원하는 권한 계층
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/01902bb8-7d58-4b5f-bce0-a8abb1e442f8/image.png)
+![image13](https://github.com/user-attachments/assets/6ab9aed6-6346-4474-bba8-1fb6720a4591)
 
 - 웹 계층
     - URL 요청에 따른 메뉴 혹은 화면단위의 레벨 보안
@@ -39,7 +39,7 @@
 
 ### FilterSecurityInterceptor Flow
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/848dde3a-2dbc-4bb7-8743-777d9450d5b7/image.png)
+![image14](https://github.com/user-attachments/assets/7f7a6d6f-e8eb-4ae8-b488-1e819e5f3fa4)
 
 1. 사용자 요청
 2. `FilterSecurityInterceptor`가 인증 객체 존재 여부 판단
