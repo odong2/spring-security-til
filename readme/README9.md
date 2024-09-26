@@ -1,6 +1,6 @@
 ### CSRF
 
-<img width="600" src="https://github.com/user-attachments/assets/14a85371-249d-41d5-9674-a1774c4681f">
+<img width="600" src="https://github.com/user-attachments/assets/14a85371-249d-41d5-9674-a1774c4681fb">
 
 1. 사용자가 쇼핑몰에 로그인
 2. 쇼핑몰로 부터 세션 쿠키 발급 받음
