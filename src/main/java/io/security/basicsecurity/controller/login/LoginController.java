@@ -15,13 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginController {
 
     @GetMapping("/login")
-    public String login(@RequestParam(value = "error", required = false) String error,
-                        @RequestParam(value = "exception", required = false) String exception, Model model){
+    public String login(){
 
-        model.addAttribute("error", error);
-        model.addAttribute("exception", exception);
-
-        return "login";
+        return "user/login/login";
     }
 
     @GetMapping("/logout")
@@ -32,6 +28,6 @@ public class LoginController {
         if(authentication != null){
             new SecurityContextLogoutHandler().logout(request, response, authentication);
         }
-        return "redirect:/login";
+        return "redirect:/user/login/login";
     }
 }
