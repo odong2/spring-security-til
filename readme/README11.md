@@ -1,6 +1,6 @@
 ### 필터 초기화와 다중 설정 클래스
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/61efb05e-b59d-446c-892c-8bc087df5d7e/image.png)
+![image3](https://github.com/user-attachments/assets/2184fbc9-8750-4596-adc9-ad849fea5d2a)
 
 - WebSecurityConfigurerAdapter 상속 받아 httpSecurity 통해 인증 및 인가 API 설정 (SequrityConfig 클래스)
 - 위 이미지는 기존 SecurityConfig를 하나만 설정하는 것이 아닌 두 개를 생성하여 다중으로 설정하는 방법의 예시
@@ -23,7 +23,7 @@
 
 ### 다중 설정 클래스 흐름
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/1cd12607-d313-4985-922e-f6060ea1f3a7/image.png)
+![image4](https://github.com/user-attachments/assets/acc98afd-ad3a-4e94-8175-db3b114a6b02)
 
 1. 사용자가 `/admin` 요청
 2. FilterChainProxy 요청 받음
