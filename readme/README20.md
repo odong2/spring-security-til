@@ -27,7 +27,7 @@
 
 ### 인가 처리 Flow
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/7f2365ae-ea78-4340-b09d-9671c8c311c7/6fada47c-7194-4f66-89dc-ab4e6dd8f203/image.png)
+![image15](https://github.com/user-attachments/assets/6463f8b7-3ec9-4cba-a581-40fc3c17e391)
 
 - FilterSecurityInterceptor가 AccessDecisionManager에게 인가 처리 위임
 - AccessDecisionManager는 여러 Votor들에게 인증,요청,권한 정보 전달과 함께 인가 처리 맡김
