@@ -1,5 +1,6 @@
 package io.security.basicsecurity.security.configs;
 
+import io.security.basicsecurity.metadatasource.UrlFilterInvocationSecurityMetadataSource;
 import io.security.basicsecurity.security.common.FormAuthenticationDetailSource;
 import io.security.basicsecurity.security.handler.FormAccessDeniedHandler;
 import io.security.basicsecurity.security.handler.FormAuthenticationFailureHandler;
@@ -11,6 +12,10 @@ import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.access.AccessDecisionManager;
+import org.springframework.security.access.AccessDecisionVoter;
+import org.springframework.security.access.vote.AffirmativeBased;
+import org.springframework.security.access.vote.RoleVoter;
 import org.springframework.security.authentication.AuthenticationDetailsSource;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -22,9 +27,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
+import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -67,8 +77,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-
-
     @Override
     public void configure(WebSecurity web) throws Exception {
         // 정적 파일 보안필터 거치지 않게 설정
@@ -79,9 +87,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/mypage").hasRole("USER")
-                .antMatchers("/messages").hasRole("MANAGER")
-                .antMatchers("/config").hasRole("ADMIN")
                 .antMatchers("/**").permitAll()
                 .anyRequest().authenticated()
             .and()
@@ -92,18 +97,42 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .successHandler(formAuthenticationSuccessHandler) // 인증 성공 후 처리 핸들러
                 .failureHandler(formAuthenticationFailureHandler) // 인증 실패 후 처리 핸들러
                 .permitAll()
-                .and()
+            .and()
                 .exceptionHandling()
                 // .authenticationEntryPoint(new AjaxLoginAuthenticationEntryPoint())
                 .authenticationEntryPoint(new LoginUrlAuthenticationEntryPoint("/login"))
                 .accessDeniedPage("/denied")
                 .accessDeniedHandler(accessDeniedHandler())
-//        .and()
-//                .addFilterBefore(customFilterSecurityInterceptor(), FilterSecurityInterceptor.cl
+            .and()
+                .addFilterBefore(customFilterSecurityInterceptor(), FilterSecurityInterceptor.class)
         ;
 
         http
                 .exceptionHandling()
                 .accessDeniedHandler(accessDeniedHandler());
+    }
+
+    @Bean
+    public FilterSecurityInterceptor customFilterSecurityInterceptor() throws Exception {
+
+        FilterSecurityInterceptor filterSecurityInterceptor = new FilterSecurityInterceptor();
+        filterSecurityInterceptor.setSecurityMetadataSource(urlFilterInvocationSecurityMetadataSource());
+        filterSecurityInterceptor.setAccessDecisionManager(affirmativeBased());          // 인가 관리자 설정
+        filterSecurityInterceptor.setAuthenticationManager(authenticationManagerBean()); // 인증 관리자 설정
+        return filterSecurityInterceptor;
+    }
+
+    @Bean
+    public FilterInvocationSecurityMetadataSource urlFilterInvocationSecurityMetadataSource() {
+        return new UrlFilterInvocationSecurityMetadataSource();
+    }
+
+    private AccessDecisionManager affirmativeBased() {
+        AffirmativeBased affirmativeBased = new AffirmativeBased(getAccessDecisionVoters());
+        return affirmativeBased;
+    }
+
+    private List<AccessDecisionVoter<?>> getAccessDecisionVoters() {
+        return Arrays.asList(new RoleVoter());
     }
 }
