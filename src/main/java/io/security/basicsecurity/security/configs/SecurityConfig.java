@@ -1,13 +1,18 @@
 package io.security.basicsecurity.security.configs;
 
-import io.security.basicsecurity.security.handler.CustomAccessDeniedHandler;
-import io.security.basicsecurity.security.provider.CustomAuthenticationProvider;
+import io.security.basicsecurity.security.common.FormAuthenticationDetailSource;
+import io.security.basicsecurity.security.handler.FormAccessDeniedHandler;
+import io.security.basicsecurity.security.handler.FormAuthenticationFailureHandler;
+import io.security.basicsecurity.security.handler.FormAuthenticationSuccessHandler;
+import io.security.basicsecurity.security.provider.FormAuthenticationProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationDetailsSource;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -22,17 +27,18 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 
 @Configuration
 @EnableWebSecurity
+@Order(1)
 @Slf4j
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private AuthenticationSuccessHandler customAuthenticationSuccessHandler;
+    private FormAuthenticationSuccessHandler formAuthenticationSuccessHandler;
 
     @Autowired
-    private AuthenticationFailureHandler customAuthenticationFailureHandler;
+    private FormAuthenticationFailureHandler formAuthenticationFailureHandler;
 
     @Autowired
-    private AuthenticationDetailsSource formWebAuthenticationDetailsSource;
+    private FormAuthenticationDetailSource formAuthenticationDetailSource;
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // 인증 처리 시 커스텀해서 만든 AuthenticationProvider 사용하여 인증 처리
@@ -40,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Bean
     public AuthenticationProvider authenticationProvider(){
-        return new CustomAuthenticationProvider();
+        return new FormAuthenticationProvider();
     }
 
     @Bean
@@ -50,10 +56,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public AccessDeniedHandler accessDeniedHandler() {
-        CustomAccessDeniedHandler accessDeniedHandler = new CustomAccessDeniedHandler();
+        FormAccessDeniedHandler accessDeniedHandler = new FormAccessDeniedHandler();
         accessDeniedHandler.setErrorPage("/denied");
         return accessDeniedHandler;
     }
+
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
+
+
     @Override
     public void configure(WebSecurity web) throws Exception {
         // 정적 파일 보안필터 거치지 않게 설정
@@ -69,15 +83,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/messages").hasRole("MANAGER")
                 .antMatchers("/config").hasRole("ADMIN")
                 .anyRequest().authenticated()
-                .and()
+            .and()
                 .formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/login_proc")
-                .authenticationDetailsSource(formWebAuthenticationDetailsSource)
+                .authenticationDetailsSource(formAuthenticationDetailSource)
                 .defaultSuccessUrl("/")
-                .successHandler(customAuthenticationSuccessHandler) // 인증 성공 후 처리 핸들러
-                .failureHandler(customAuthenticationFailureHandler) // 인증 실패 후 처리 핸들러
-                .permitAll();
+                .successHandler(formAuthenticationSuccessHandler) // 인증 성공 후 처리 핸들러
+                .failureHandler(formAuthenticationFailureHandler) // 인증 실패 후 처리 핸들러
+                .permitAll()
+        ;
+
         http
                 .exceptionHandling()
                 .accessDeniedHandler(accessDeniedHandler());
