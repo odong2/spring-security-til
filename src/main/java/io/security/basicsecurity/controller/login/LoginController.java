@@ -1,7 +1,7 @@
 package io.security.basicsecurity.controller.login;
 
-import io.security.basicsecurity.domain.Account;
-import io.security.basicsecurity.token.AjaxAuthenticationToken;
+import io.security.basicsecurity.domain.entity.Account;
+import io.security.basicsecurity.security.token.AjaxAuthenticationToken;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

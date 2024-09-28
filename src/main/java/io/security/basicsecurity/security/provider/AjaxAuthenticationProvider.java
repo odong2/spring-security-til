@@ -1,8 +1,7 @@
 package io.security.basicsecurity.security.provider;
 
 import io.security.basicsecurity.security.service.AccountContext;
-import io.security.basicsecurity.token.AjaxAuthenticationToken;
-import lombok.RequiredArgsConstructor;
+import io.security.basicsecurity.security.token.AjaxAuthenticationToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
