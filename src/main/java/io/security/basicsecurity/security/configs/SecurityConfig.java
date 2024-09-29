@@ -2,6 +2,7 @@ package io.security.basicsecurity.security.configs;
 
 import io.security.basicsecurity.security.common.FormAuthenticationDetailSource;
 import io.security.basicsecurity.security.factory.UrlResourcesMapFactoryBean;
+import io.security.basicsecurity.security.filter.PermitAllFilter;
 import io.security.basicsecurity.security.handler.FormAccessDeniedHandler;
 import io.security.basicsecurity.security.handler.FormAuthenticationFailureHandler;
 import io.security.basicsecurity.security.handler.FormAuthenticationSuccessHandler;
@@ -56,6 +57,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private SecurityResourceService securityResourceService;
+
+    private String[] permitAllResources = {"/", "/login", "/user/login/**"};
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -120,13 +123,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public FilterSecurityInterceptor customFilterSecurityInterceptor() throws Exception {
+    public PermitAllFilter customFilterSecurityInterceptor() throws Exception {
 
-        FilterSecurityInterceptor filterSecurityInterceptor = new FilterSecurityInterceptor();
-        filterSecurityInterceptor.setSecurityMetadataSource(urlFilterInvocationSecurityMetadataSource());
-        filterSecurityInterceptor.setAccessDecisionManager(affirmativeBased());          // 인가 관리자 설정
-        filterSecurityInterceptor.setAuthenticationManager(authenticationManagerBean()); // 인증 관리자 설정
-        return filterSecurityInterceptor;
+        PermitAllFilter permitAllFilter = new PermitAllFilter(permitAllResources);
+        permitAllFilter.setSecurityMetadataSource(urlFilterInvocationSecurityMetadataSource());
+        permitAllFilter.setAccessDecisionManager(affirmativeBased());          // 인가 관리자 설정
+        permitAllFilter.setAuthenticationManager(authenticationManagerBean()); // 인증 관리자 설정
+        return permitAllFilter;
     }
 
     @Bean
