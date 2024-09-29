@@ -9,6 +9,7 @@ import io.security.basicsecurity.security.handler.FormAuthenticationFailureHandl
 import io.security.basicsecurity.security.handler.FormAuthenticationSuccessHandler;
 import io.security.basicsecurity.security.metadatasource.UrlFilterInvocationSecurityMetadataSource;
 import io.security.basicsecurity.security.provider.FormAuthenticationProvider;
+import io.security.basicsecurity.security.voter.IpAddressVoter;
 import io.security.basicsecurity.service.SecurityResourceService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -149,17 +150,32 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return urlResourcesMapFactoryBean;
     }
 
+    /**
+     * 접근 결정 관리자
+     * @return
+     */
     private AccessDecisionManager affirmativeBased() {
         AffirmativeBased affirmativeBased = new AffirmativeBased(getAccessDecisionVoters());
         return affirmativeBased;
     }
 
+    /**
+     * voter 설정
+     * @return
+     */
     private List<AccessDecisionVoter<?>> getAccessDecisionVoters() {
 
         List<AccessDecisionVoter<? extends Object>> accessDecisionVoters = new ArrayList<>();
-        accessDecisionVoters.add(roleVoter());
+        // 순서 중요
+        accessDecisionVoters.add(ipAddressVoter());    // 1. ipAddress 심의
+        accessDecisionVoters.add(roleVoter());         // 2. 권한 심의
 
-        return Arrays.asList(new RoleVoter());
+        return accessDecisionVoters;
+    }
+
+    @Bean
+    public AccessDecisionVoter<? extends Object> ipAddressVoter() {
+        return new IpAddressVoter(securityResourceService);
     }
 
     /********************************************************
@@ -170,7 +186,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public AccessDecisionVoter<? extends Object> roleVoter() {
         // 규칙을 저장한 클래스(RoleHierarchy 클래스) 생성자에 전달
         return new RoleHierarchyVoter(roleHierarchy());
-
     }
 
     @Bean
