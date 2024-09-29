@@ -14,6 +14,5 @@ public class AjaxAccessDeniedHandler implements AccessDeniedHandler {
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
 
         response.sendError(HttpServletResponse.SC_FORBIDDEN, "Access is denied"); // 403 err
-
     }
 }

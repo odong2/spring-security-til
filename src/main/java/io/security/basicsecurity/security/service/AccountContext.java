@@ -1,20 +1,18 @@
 package io.security.basicsecurity.security.service;
 
-import io.security.basicsecurity.domain.Account;
+import io.security.basicsecurity.domain.entity.Account;
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
-import java.util.Collection;
+import java.util.List;
 
+@Data
 public class AccountContext extends User {
-    private final Account account;
+  private Account account;
 
-    public AccountContext(Account account, Collection<? extends GrantedAuthority> authorities) {
-        super(account.getUsername(), account.getPassword(), authorities);
-        this.account = account;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
+  public AccountContext(Account account, List<GrantedAuthority> roles) {
+    super(account.getUsername(), account.getPassword(), roles);
+    this.account = account;
+  }
 }

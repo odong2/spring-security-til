@@ -1,6 +1,6 @@
 package io.security.basicsecurity.security.configs;
 
-import io.security.basicsecurity.filter.AjaxLoginProcessingFilter;
+import io.security.basicsecurity.security.filter.AjaxLoginProcessingFilter;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.HttpSecurityBuilder;
 import org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer;
