@@ -1,11 +1,13 @@
 package io.security.basicsecurity.security.configs;
 
-import io.security.basicsecurity.metadatasource.UrlFilterInvocationSecurityMetadataSource;
 import io.security.basicsecurity.security.common.FormAuthenticationDetailSource;
+import io.security.basicsecurity.security.factory.UrlResourcesMapFactoryBean;
 import io.security.basicsecurity.security.handler.FormAccessDeniedHandler;
 import io.security.basicsecurity.security.handler.FormAuthenticationFailureHandler;
 import io.security.basicsecurity.security.handler.FormAuthenticationSuccessHandler;
+import io.security.basicsecurity.security.metadatasource.UrlFilterInvocationSecurityMetadataSource;
 import io.security.basicsecurity.security.provider.FormAuthenticationProvider;
+import io.security.basicsecurity.service.SecurityResourceService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
@@ -35,6 +37,7 @@ import org.springframework.security.web.authentication.LoginUrlAuthenticationEnt
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.ResourceBundle;
 
 @Configuration
 @EnableWebSecurity
@@ -50,6 +53,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private FormAuthenticationDetailSource formAuthenticationDetailSource;
+
+    @Autowired
+    private SecurityResourceService securityResourceService;
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // 인증 처리 시 커스텀해서 만든 AuthenticationProvider 사용하여 인증 처리
@@ -124,7 +131,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public FilterInvocationSecurityMetadataSource urlFilterInvocationSecurityMetadataSource() {
-        return new UrlFilterInvocationSecurityMetadataSource();
+        return new UrlFilterInvocationSecurityMetadataSource(urlResourcesMapFactoryBean().getObject());
+    }
+
+    @Bean
+    public UrlResourcesMapFactoryBean urlResourcesMapFactoryBean(){
+        UrlResourcesMapFactoryBean urlResourcesMapFactoryBean = new UrlResourcesMapFactoryBean();
+        urlResourcesMapFactoryBean.setSecurityResourceService(securityResourceService);
+        return urlResourcesMapFactoryBean;
     }
 
     private AccessDecisionManager affirmativeBased() {

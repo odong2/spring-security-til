@@ -1,4 +1,4 @@
-package io.security.basicsecurity.filter;
+package io.security.basicsecurity.security.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.security.basicsecurity.domain.dto.AccountDto;
