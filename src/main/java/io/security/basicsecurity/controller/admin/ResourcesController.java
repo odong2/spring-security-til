@@ -5,6 +5,7 @@ import io.security.basicsecurity.domain.dto.ResourcesDto;
 import io.security.basicsecurity.domain.entity.Resources;
 import io.security.basicsecurity.domain.entity.Role;
 import io.security.basicsecurity.repository.RoleRepository;
+import io.security.basicsecurity.security.metadatasource.UrlFilterInvocationSecurityMetadataSource;
 import io.security.basicsecurity.service.ResourcesService;
 import io.security.basicsecurity.service.RoleService;
 import org.modelmapper.ModelMapper;
@@ -31,6 +32,9 @@ public class ResourcesController {
 	@Autowired
 	private RoleService roleService;
 
+	@Autowired
+	private UrlFilterInvocationSecurityMetadataSource filterInvocationSecurityMetadataSource;
+
 	@GetMapping(value="/admin/resources")
 	public String getResources(Model model) throws Exception {
 
@@ -51,6 +55,8 @@ public class ResourcesController {
 		resources.setRoleSet(roles);
 
 		resourcesService.createResources(resources);
+		// 캐시된 URL 정보 리로드
+		filterInvocationSecurityMetadataSource.reload();
 
 		return "redirect:/admin/resources";
 	}
@@ -89,6 +95,8 @@ public class ResourcesController {
 
 		Resources resources = resourcesService.getResources(Long.valueOf(id));
 		resourcesService.deleteResources(Long.valueOf(id));
+		// 캐시된 URL 정보 리로드
+		filterInvocationSecurityMetadataSource.reload();
 
 		return "redirect:/admin/resources";
 	}
