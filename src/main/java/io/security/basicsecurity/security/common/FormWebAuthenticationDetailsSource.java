@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
  * 설정 클래스에 추가하여 사용
  */
 @Component
-public class FormAuthenticationDetailSource implements AuthenticationDetailsSource<HttpServletRequest, WebAuthenticationDetails> {
+public class FormWebAuthenticationDetailsSource implements AuthenticationDetailsSource<HttpServletRequest, WebAuthenticationDetails> {
     @Override
     public WebAuthenticationDetails buildDetails(HttpServletRequest context) {
         return new FormWebAuthenticationDetails(context);

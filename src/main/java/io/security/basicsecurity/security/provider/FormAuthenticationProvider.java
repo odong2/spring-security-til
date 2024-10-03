@@ -24,6 +24,11 @@ public class FormAuthenticationProvider implements AuthenticationProvider {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    public FormAuthenticationProvider(PasswordEncoder passwordEncoder) {
+        this.passwordEncoder = passwordEncoder;
+    }
+
+
     @Override
     @Transactional
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
